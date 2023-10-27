@@ -1,0 +1,45 @@
+# FilterLib custom filtering config
+# This library was made by BowFun for Bow Network.
+# Config made by BowFun.
+
+# What is FilterLib?
+# FilterLib is a standard text filtering library. This allows for a standard ruleset for text filtering.
+# This is not a plugin, but a library used by a plugin you installed on your server.
+
+# Category names have no impact on filtering.
+# Higher up categories have greater priority for filtering.
+# Also, not all features are guaranteed to work. All features have to be implemented by the plugin developer that uses FilterLib.
+racism:
+  # All regex is processed case-insensitive.
+  # Use 2 backslashes to escape characters correctly for YAML. You will get an error if you don't.
+  # More info on the double-escape thing above: https://www.reddit.com/r/learnprogramming/comments/13bb5pa
+  regex: "\\b(?:\\w*nigger|\\w*nigg|\\w*faggot|\\w*fag)\\w*\\b"
+  # Commands use %player% for player names.
+  command: "mute %player% -s (Automod) We don't allow racism here."
+  # This permission will allow your message to go through regardless of the contents.
+  bypass_permission: "filters.bypass.racism"
+
+suicide:
+  regex: "\\b(?:\\w*suicide|\\w*kys|\\w*ending it all|\\w*end it all|\\w*kill yourself|\\w*self harm|\\w*ending my life)\\w*\\b"
+  command: "tempmute %player% -s 1w (Automod) Please don't talk about suicide! If you are thinking about ending your life, call 988 (US) or text Hello to 741741 (US & UK). You matter!"
+  bypass_permission: "filters.bypass.suicide"
+
+drugs:
+  regex: "\\b(?:\\w*cocaine|\\w*meth|\\w*happy sugar|\\w*fentanyl|\\w*marijuana|\\w*lsd|\\w*ecstasy|\\w*pcp|\\w*psilocybin|\\w*magic mushrooms|\\w*heroin|\\w*ketamine)\\w*\\b"
+  command: "tempmute %player% -s 5d (Automod) Please don't discuss drugs!"
+  bypass_permission: "filters.bypass.drugs"
+
+sexual_terms:
+  regex: "\\b(?:\\w*sex|\\w*rape|\\w*raping|\\w*rapist|\\w*cum|\\w*dick|\\w*cock|\\w*shlong|\\w*penis|\\w*cunt|\\w*pussy|\\w*vagina|\\w*cocksucker|\\w*tits|\\w*boobs|\\w*breasts|\\w*nipples|\\w*testicles|\\w*jizz|\\w*slut|\\w*anal)\\w*\\b"
+  command: "tempmute %player% -s 1d (Automod) Please don't use sexual terms!"
+  bypass_permission: "filters.bypass.sexual"
+
+swear_words:
+  regex: "\\b(?:\\w*fuck|\\w*bitch|\\w*shit)\\w*\\b"
+  command: "tempmute %player% -s 1d (Automod) Please don't swear!"
+  bypass_permission: "filters.bypass.swear"
+
+links:
+  regex: "\\b\\S+\\.[a-zA-Z]{2,}\\b"
+  command: "warn -s %player% (Automod) Please don't post links."
+  bypass_permission: "filters.bypass.links"
