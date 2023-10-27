@@ -20,7 +20,7 @@ public class TextFilterType {
         return bypassPermission;
     }
 
-    public void registerFilter() {
+    void registerFilter() {
         FilterText.registerFilter(this);
     }
 }

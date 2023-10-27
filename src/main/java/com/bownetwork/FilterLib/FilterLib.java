@@ -2,7 +2,10 @@ package com.bownetwork.FilterLib;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class FilterLib {
     public static void initialize() {
@@ -16,7 +19,6 @@ public class FilterLib {
     private static void createFilterLibFolder() {
         File pluginsFolder = new File("plugins");
         File filterLibFolder = new File(pluginsFolder, "FilterLib");
-
         if (!filterLibFolder.exists()) {
             boolean folderCreated = filterLibFolder.mkdirs();
             if (folderCreated) {
@@ -34,10 +36,10 @@ public class FilterLib {
 
         if (!configFile.exists()) {
             // Get the path of the "config.yml" in the resources folder
-            File resourceConfigFile = new File("src/main/resources/config.yml");
-
+            InputStream configInputStream = FilterLib.class.getResourceAsStream("config.yml");
+            Path destinationPath = Paths.get("plugins/FilterLib", "config.yml");
             try {
-                Files.copy(resourceConfigFile.toPath(), configFile.toPath());
+                Files.copy(configInputStream, destinationPath);
                 System.out.println("config.yml added to FilterLib folder.");
             } catch (IOException e) {
                 e.printStackTrace();
