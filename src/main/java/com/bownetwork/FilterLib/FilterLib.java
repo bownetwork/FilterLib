@@ -29,23 +29,6 @@ public class FilterLib {
         }
     }
 
-<<<<<<< HEAD
-    // Method to copy the "config.yml" file from resources to "FilterLib" folder
-    private static void copyConfigFile() {
-        File filterLibFolder = new File("plugins", "FilterLib");
-        File configFile = new File(filterLibFolder, "config.yml");
-
-        if (!configFile.exists()) {
-            // Get the path of the "config.yml" in the resources folder
-            InputStream configInputStream = FilterLib.class.getResourceAsStream("config.yml");
-            Path destinationPath = Paths.get("plugins/FilterLib", "config.yml");
-            try {
-                Files.copy(configInputStream, destinationPath);
-                System.out.println("config.yml added to FilterLib folder.");
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.err.println("Failed to copy config.yml to FilterLib folder.\nJoin our Discord for help with FilterLib @ https://discord.bownet.xyz.");
-=======
     // Method to copy the "filters.yml" file from resources to "FilterLib" folder
     private static void copyConfigFile() {
         File filterLibFolder = new File("plugins", "FilterLib");
@@ -61,7 +44,6 @@ public class FilterLib {
             } catch (IOException e) {
                 e.printStackTrace();
                 System.err.println("Failed to copy filters.yml to FilterLib folder.\nJoin our Discord for help with FilterLib @ https://discord.bownet.xyz.");
->>>>>>> f85b98d (Copied some code from old computer\nGot some old code off of my old SSD.)
             }
         }
     }

@@ -15,13 +15,8 @@ class ConfigProcessor {
 
         List<TextFilterType> textFilterTypes = new ArrayList<>();
 
-<<<<<<< HEAD
-        // Define the path to the "config.yml" file
-        String configFilePath = "plugins/FilterLib/config.yml";
-=======
         // Define the path to the "filters.yml" file
         String configFilePath = "plugins/FilterLib/filters.yml";
->>>>>>> f85b98d (Copied some code from old computer\nGot some old code off of my old SSD.)
 
         File configFile = new File(configFilePath);
 
