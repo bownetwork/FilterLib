@@ -3,11 +3,11 @@
  Note that the documentation is written for Bukkit/Spigot/Paper plugins, but has worked in BungeeCord/Waterfall plugins with some changes.
  In theory, this should work for all Java projects.
 
-# Setup Guide
+## Setup Guide
 To use FilterLib in your plugins, use the following steps. Note that this guide is for Gradle.
 1. Add the [shadow](https://github.com/johnrengelman/shadow) plugin to your build.gradle.
 2. Download the JAR file for FilterLib and put it in a standard directory.
-3. Add this line to your build.gradle dependencies: ```implementation files('/full/path/to/FilterLib-1.0-SNAPSHOT.jar')```.
+3. Add this line to your build.gradle dependencies: ```implementation files('/full/path/to/FilterLib-[version].jar')```.
 4. Import com.bownetwork.FilterLib.FilterLib into your main class.
 5. Add this line to your onEnable method: ```FilterLib.initialize()```.
 6. Add the Example Filter Code to your main class.
@@ -16,7 +16,7 @@ To use FilterLib in your plugins, use the following steps. Note that this guide 
 9. Put your new JAR file onto a Minecraft server and reboot it.
 10. Finally, check console and make sure your plugin mentions during loading that FilterLib has started.
 
-## Example Filter Code
+### Example Filter Code
 A simple method that gives all of FilterLib's features to the plugin.
 **NOTE: This template code is for a Spigot plugin.**
 This filters with regex provided in the config.
@@ -49,3 +49,12 @@ public boolean filterMessages(String valueToCheck, Player sendingPlayer) {
     return status;
 }
 ```
+
+## Building Guide
+If you would like to build a FilterLib jar file for yourself, follow these instructions.
+Note that this IS NOT a plugin, just a library that plugins can use.
+1. Clone the code and cd into the folder. Make sure you have JDK 17 (recommended) or above.
+2. Run ```./gradlew(.bat) build```.
+3. Go to ```build/libs/FilterLib-[version].jar``` and copy it out.
+4. Now follow the Setup Guide above, adding the path to this compiled jar file as the dependency.
+
