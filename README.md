@@ -7,7 +7,7 @@
 To use FilterLib in your plugins, use the following steps. Note that this guide is for Gradle.
 1. Add the [shadow](https://github.com/johnrengelman/shadow) plugin to your build.gradle.
 2. Download the JAR file for FilterLib and put it in a standard directory.
-3. Add this line to your build.gradle dependencies: ```implementation files('/full/path/to//FilterLib-1.0-SNAPSHOT.jar')```.
+3. Add this line to your build.gradle dependencies: ```implementation files('/full/path/to/FilterLib-1.0-SNAPSHOT.jar')```.
 4. Import com.bownetwork.FilterLib.FilterLib into your main class.
 5. Add this line to your onEnable method: ```FilterLib.initialize()```.
 6. Add the Example Filter Code to your main class.
@@ -47,4 +47,5 @@ public boolean filterMessages(String valueToCheck, Player sendingPlayer) {
         }
     }
     return status;
-}```
+}
+```
