@@ -12,7 +12,7 @@ To use FilterLib in your plugins, use the following steps. Note that this guide 
 5. Add this line to your onEnable method: ```FilterLib.initialize()```.
 6. Add the Example Filter Code to your main class.
 7. In any class or method where you want to filter text, instance main and use the filtering method provided in the example code. 
-8. Run ./gradlew(.bat) shadowJar to build
+8. Run ```./gradlew(.bat) shadowJar``` to build
 9. Put your new JAR file onto a Minecraft server and reboot it.
 10. Finally, check console and make sure your plugin mentions during loading that FilterLib has started.
 
